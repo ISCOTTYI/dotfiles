@@ -18,14 +18,29 @@ git clone https://github.com/eieioxyz/Beyond-Dotfiles-in-100-Seconds.git ~/.dotf
 ```
 
 
-3. Create symlinks in the Home directory to the real files in the repo.
+3. Clean up other files that might already exist, install oh-my-zsh via
+
+````zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Create symlinks in the Home directory to the real files in the repo.
 
 ```zsh
-# There are better and less manual ways to do this;
-# investigate install scripts and bootstrapping tools.
-
+# TODO: Add a install script to do this
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/.vimrc ~/.vimrc
+ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
+
+# Specific for VSCode
+mv ~/Library/Application\ Support/Code/User/settings.json ~/Library/Application\ Support/Code/User/settings_old.json
+mv ~/Library/Application\ Support/Code/User/keybindings.json ~/Library/Application\ Support/Code/User/keybindings_old.json
+mv ~/Library/Application\ Support/Code/User/snippets/ ~/Library/Application\ Support/Code/User/snippets/
+ln -s ~/.dotfiles/VSCode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -s ~/.dotfiles/VSCode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+ln -s ~/.dotfiles/VSCode/snippets/ ~/Library/Application\ Support/Code/User
 ```
 
 
