@@ -1,3 +1,5 @@
+inoremap jj <ESC>
+
 language en_US.UTF-8
 syntax enable 
 set number
