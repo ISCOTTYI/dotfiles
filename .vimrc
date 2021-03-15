@@ -9,6 +9,7 @@ set formatoptions-=t
 set showbreak=+++
 set textwidth=100
 set showmatch
+set mouse=a
  
 set hlsearch
 set smartcase
