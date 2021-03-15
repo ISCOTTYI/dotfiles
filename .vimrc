@@ -17,7 +17,7 @@ set ignorecase
 set incsearch
  
 set autoindent
-set cindent
+"set cindent    "Caused fraudulent indents in python code
 set expandtab
 set shiftwidth=4
 set smartindent
