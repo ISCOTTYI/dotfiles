@@ -15,6 +15,8 @@ set hlsearch
 set smartcase
 set ignorecase
 set incsearch
+
+set showcmd
  
 set autoindent
 "set cindent    "Caused fraudulent indents in python code
