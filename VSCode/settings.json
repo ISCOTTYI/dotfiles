@@ -184,4 +184,10 @@
         "yml"
     ],
     "vim.vimrc.enable": true,
+    "rewrap.wrappingColumn": 100,
+    "[latex]": {
+        "rewrap.autoWrap.enabled": true,
+        "editor.formatOnPaste": false,
+        "editor.suggestSelection": "recentlyUsedByPrefix"
+    },
 }
