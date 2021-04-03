@@ -190,4 +190,6 @@
         "editor.formatOnPaste": false,
         "editor.suggestSelection": "recentlyUsedByPrefix"
     },
+    "workbench.sideBar.location": "right",
+    "editor.minimap.maxColumn": 100,
 }

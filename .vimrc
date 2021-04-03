@@ -29,6 +29,7 @@ inoremap jj <ESC>
 
 language en_US.UTF-8
 syntax enable 
+let python_highlight_all=1
 
 " load colorscheme
 let g:dracula_colorterm = 0
@@ -37,6 +38,7 @@ colorscheme dracula
 set t_Co=256
 
 set number
+set relativenumber
 set wrap
 set linebreak
 set formatoptions-=t
