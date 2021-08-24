@@ -7,6 +7,12 @@
     "latex-workshop.latex.recipes": [
 
         {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "lualatexmk"
+            ]
+        },
+        {
             "name": "latexmk 🔃",
             "tools": [
                 "latexmk"
@@ -19,18 +25,18 @@
             ]
         },
         {
-            "name": "latexmk (lualatex)",
-            "tools": [
-                "lualatexmk"
-            ]
-        },
-        {
             "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
             "tools": [
                 "pdflatex",
                 "bibtex",
                 "pdflatex",
                 "pdflatex"
+            ]
+        },
+        {
+            "name": "biblatex (biber)",
+            "tools": [
+                "biber"
             ]
         },
         {
@@ -104,6 +110,13 @@
             "env": {}
         },
         {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
             "name": "rnw2tex",
             "command": "Rscript",
             "args": [
@@ -131,20 +144,15 @@
             "env": {}
         }
     ],
-    "editor.wordWrap": "on",
     "vsicons.dontShowNewVersionMessage": true,
     "editor.rulers": [
         100
     ],
     "autoDocstring.startOnNewLine": true,
     "autoDocstring.docstringFormat": "sphinx",
-    "window.zoomLevel": 0,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     "editor.fontSize": 14,
     "cSpell.enabled": false,
     "terminal.integrated.shell.osx": "/bin/zsh",
@@ -192,4 +200,12 @@
     },
     "workbench.sideBar.location": "right",
     "editor.minimap.maxColumn": 100,
+    "latex-workshop.latex.build.forceRecipeUsage": true,
+    "workbench.list.openMode": "doubleClick",
+    "python.analysis.typeCheckingMode": "basic",
+    "editor.minimap.enabled": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
 }

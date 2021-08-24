@@ -26,6 +26,7 @@ call plug#end()
 """""""""""""""
 
 inoremap jj <ESC>
+let mapleader=","
 
 language en_US.UTF-8
 syntax enable 

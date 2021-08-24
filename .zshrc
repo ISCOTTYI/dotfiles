@@ -1,6 +1,12 @@
 # Custom Added by Daniel <3:
 ZSH_DISABLE_COMPFIX=true
 
+# Autolaunch tmux upon terminal start
+# https://unix.stackexchange.com/questions/43601/how-can-i-set-my-default-shell-to-start-up-tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+    exec tmux new-session -A -s main
+fi
+
 hash -d unidir=/Users/Daniel/iCloudDrive/Uni
 
 # If you come from bash you might have to change your $PATH.
@@ -108,3 +114,5 @@ source $ZSH/oh-my-zsh.sh
 alias c="clear"
 alias vi=/usr/local/bin/vim
 alias vim=/usr/local/bin/vim
+alias gcc=/usr/local/bin/gcc-11
+alias g++=/usr/local/bin/g++-11
