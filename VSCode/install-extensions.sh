@@ -5,18 +5,20 @@
 #   $ brew cask install visual-studio-code
 
 pkglist=(
+asvetliakov.vscode-neovim
 dracula-theme.theme-dracula
 eamodio.gitlens
 James-Yu.latex-workshop
-MS-CEINTL.vscode-language-pack-de
 ms-python.python
+ms-python.vscode-pylance
 ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
+ms-vscode.cpptools
 njpwerner.autodocstring
 stkb.rewrap
-streetsidesoftware.code-spell-checker
 valentjn.vscode-ltex
 vscode-icons-team.vscode-icons
-vscodevim.vim
 wayou.vscode-todo-highlight
 )
 

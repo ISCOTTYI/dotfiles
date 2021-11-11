@@ -1,8 +1,17 @@
 {
     "git.ignoreMissingGitWarning": true,
     "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Dracula",
     "explorer.confirmDragAndDrop": false,
+    "editor.tokenColorCustomizations": {
+        "[Dracula]": {
+            "textMateRules": [{
+                "scope": "meta.function-call.generic.python",
+                "settings": {
+                    "foreground": "#50fa7b"
+                }
+            }]
+        }
+    },
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.recipes": [
 
@@ -146,52 +155,14 @@
     ],
     "vsicons.dontShowNewVersionMessage": true,
     "editor.rulers": [
-        100
+        80
     ],
-    "autoDocstring.startOnNewLine": true,
-    "autoDocstring.docstringFormat": "sphinx",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
     "editor.fontSize": 14,
-    "cSpell.enabled": false,
     "terminal.integrated.shell.osx": "/bin/zsh",
     "explorer.autoReveal": false,
-    "cSpell.enabledLanguageIds": [
-        "asciidoc",
-        "c",
-        "cpp",
-        "csharp",
-        "css",
-        "git-commit",
-        "go",
-        "graphql",
-        "handlebars",
-        "haskell",
-        "html",
-        "jade",
-        "java",
-        "javascript",
-        "javascriptreact",
-        "json",
-        "jsonc",
-        "less",
-        "markdown",
-        "php",
-        "plaintext",
-        "python",
-        "pug",
-        "restructuredtext",
-        "rust",
-        "scala",
-        "scss",
-        "text",
-        "typescript",
-        "typescriptreact",
-        "yaml",
-        "yml"
-    ],
-    "vim.vimrc.enable": true,
     "rewrap.wrappingColumn": 100,
     "[latex]": {
         "rewrap.autoWrap.enabled": true,
@@ -202,10 +173,13 @@
     "editor.minimap.maxColumn": 100,
     "latex-workshop.latex.build.forceRecipeUsage": true,
     "workbench.list.openMode": "doubleClick",
-    "python.analysis.typeCheckingMode": "basic",
     "editor.minimap.enabled": false,
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
     },
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.darwin": "/Users/Daniel/.config/nvim/init.vim",
+    "vscode-neovim.mouseSelectionStartVisualMode": true,
+    "workbench.colorTheme": "Dracula",
 }

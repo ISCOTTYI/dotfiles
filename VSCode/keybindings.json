@@ -42,5 +42,11 @@
         "key": "ctrl+alt+cmd+5",
         "command": "-editor.action.outdentLines",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+    "command": "vscode-neovim.compositeEscape1",
+    "key": "j",
+    "when": "neovim.mode == insert && editorTextFocus",
+    "args": "j"
     }
 ]
