@@ -163,7 +163,7 @@
     "editor.fontSize": 14,
     "terminal.integrated.shell.osx": "/bin/zsh",
     "explorer.autoReveal": false,
-    "rewrap.wrappingColumn": 100,
+    "rewrap.wrappingColumn": 80,
     "[latex]": {
         "rewrap.autoWrap.enabled": true,
         "editor.formatOnPaste": false,
@@ -181,5 +181,5 @@
     "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
     "vscode-neovim.neovimInitVimPaths.darwin": "/Users/Daniel/.config/nvim/init.vim",
     "vscode-neovim.mouseSelectionStartVisualMode": true,
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "One Dark Pro",
 }

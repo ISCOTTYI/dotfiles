@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Script to install VSCode extensions
 # Before going to new computer renew list with
 #   $ code --list-extensions
