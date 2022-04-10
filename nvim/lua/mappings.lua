@@ -9,8 +9,8 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Leader
-map("n", "<SPACE>", "<Nop>")
-vim.g.mapleader = " "
+map("n", "\\", "<Nop>")
+vim.g.mapleader = "\\"
 
 -- Exit INSERT mode with jj
 map("i", "jj", "<ESC>")

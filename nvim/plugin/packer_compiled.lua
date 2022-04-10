@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
+  },
   ["gitsigns.nvim"] = {
     config = { "require('setup/gitsigns')" },
     loaded = true,
@@ -154,11 +159,27 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["spellsitter.nvim"] = {
+    config = { "require('setup/spellsitter')" },
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/spellsitter.nvim",
+    url = "https://github.com/lewis6991/spellsitter.nvim"
+  },
   ["telescope.nvim"] = {
     config = { "require('setup/telescope')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
+  },
+  ["vim-vsnip-integ"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
+    url = "https://github.com/hrsh7th/vim-vsnip-integ"
   },
   ["which-key.nvim"] = {
     config = { "require('setup/whichkey')" },
@@ -169,26 +190,38 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require('setup/autopairs')
-time([[Config for nvim-autopairs]], false)
--- Config for: nvim-comment
-time([[Config for nvim-comment]], true)
-require('setup/comment')
-time([[Config for nvim-comment]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('setup/telescope')
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-lsp-installer
-time([[Config for nvim-lsp-installer]], true)
-require('setup/lsp-installer')
-time([[Config for nvim-lsp-installer]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('setup/cmp')
+time([[Config for nvim-cmp]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 require('setup/gitsigns')
 time([[Config for gitsigns.nvim]], false)
+-- Config for: nvim-comment
+time([[Config for nvim-comment]], true)
+require('setup/comment')
+time([[Config for nvim-comment]], false)
+-- Config for: spellsitter.nvim
+time([[Config for spellsitter.nvim]], true)
+require('setup/spellsitter')
+time([[Config for spellsitter.nvim]], false)
+-- Config for: nvim-lsp-installer
+time([[Config for nvim-lsp-installer]], true)
+require('setup/lsp-installer')
+time([[Config for nvim-lsp-installer]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('setup/telescope')
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+require('setup/autopairs')
+time([[Config for nvim-autopairs]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+require('setup/whichkey')
+time([[Config for which-key.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require('setup/treesitter')
@@ -197,14 +230,6 @@ time([[Config for nvim-treesitter]], false)
 time([[Config for nvim-base16]], true)
 require('setup/base16')
 time([[Config for nvim-base16]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-require('setup/whichkey')
-time([[Config for which-key.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require('setup/cmp')
-time([[Config for nvim-cmp]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
@@ -217,5 +242,6 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

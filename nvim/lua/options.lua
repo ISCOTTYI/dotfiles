@@ -2,6 +2,8 @@ local o = vim.opt
 local wo = vim.wo
 local cmd = vim.cmd
 
+o.spell = true -- for spell plugin to work
+
 o.hidden = true
 o.cursorline = true
 o.mouse = "a"
