@@ -27,6 +27,9 @@ o.showmode = false -- we don't need to see things like -- INSERT -- anymore
 o.termguicolors = true
 wo.wrap = false
 wo.colorcolumn = "80"
+o.tw = 80
+cmd("set formatoptions-=t")
+cmd("set formatoptions+=q")
 
 cmd("highlight ColorColumn ctermbg=0 guibg=lightgrey")
 -- cmd([[highlight ColorColumn ctermbg=0 guibg=lightgrey]])

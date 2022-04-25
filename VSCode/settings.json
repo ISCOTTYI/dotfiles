@@ -181,5 +181,11 @@
     "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
     "vscode-neovim.neovimInitVimPaths.darwin": "/Users/Daniel/.config/nvim/init.vim",
     "vscode-neovim.mouseSelectionStartVisualMode": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<esc>"]
+        }
+    ],
     "workbench.colorTheme": "One Dark Pro",
 }

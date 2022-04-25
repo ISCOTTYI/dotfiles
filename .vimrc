@@ -1,41 +1,12 @@
-"""""""""""""""""
-"               "
-"   VIM PLUG    "
-"               "
-"""""""""""""""""
-
-" Install vim-plug if not found
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-endif
-
-" Run PlugInstall if there are missing plugins (may increase startup time of VIM)
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
-
-call plug#begin('~/.vim/plugged')
-"""
-
-    Plug 'dracula/vim', { 'as': 'dracula' }
-    
-
-"""
-call plug#end()
-"""""""""""""""
-
 inoremap jj <ESC>
-let mapleader=","
+let mapleader="\\"
 
 language en_US.UTF-8
-syntax enable 
+syntax on 
 let python_highlight_all=1
 
-" load colorscheme
-let g:dracula_colorterm = 0
-let g:dracula_italic = 0
-colorscheme dracula
+load colorscheme
+colorscheme zellner
 set t_Co=256
 
 set number
@@ -55,6 +26,8 @@ set incsearch
 
 set showcmd
 set wildmenu
+
+set hidden
  
 set autoindent
 "set cindent    "Caused fraudulent indents in python code
@@ -70,4 +43,11 @@ set colorcolumn=100
  
 set undolevels=1000
 set backspace=indent,eol,start
+
+nnoremap <TAB> :bnext<CR>
+nnoremap <S-TAB> :bprevious<CR>
+nnoremap <leader><leader> <c-^>
+nnoremap <leader>b :buffers<CR>:buffer<Space>
+vnoremap < <gv
+vnoremap > >gv
 
