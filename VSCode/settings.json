@@ -188,4 +188,5 @@
         }
     ],
     "workbench.colorTheme": "One Dark Pro",
+    "notebook.lineNumbers": "on",
 }

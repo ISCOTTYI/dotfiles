@@ -11,8 +11,8 @@ set t_Co=256
 
 set number
 set relativenumber
-set wrap
 set linebreak
+set nowrap
 set formatoptions-=t
 set showbreak=+++
 set textwidth=100

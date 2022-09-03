@@ -26,8 +26,8 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- Telescope
-map("n", "<leader>p", '<cmd>lua require("telescope.builtin").find_files()<cr>')
-map("n", "<leader>g", '<cmd>lua require("telescope.builtin").live_grep()<cr>')
+map("n", "<leader>f", '<cmd>lua require("telescope.builtin").find_files()<cr>')
+-- map("n", "<leader>g", '<cmd>lua require("telescope.builtin").live_grep()<cr>') -- ripgrep required
 map("n", "<leader>b", '<cmd>lua require("telescope.builtin").buffers()<cr>')
 -- map("n", "<leader>f", '<cmd>lua require("telescope").extensions.file_browser.file_browser()<CR>')
 map("n", "<leader>s", '<cmd>lua require("telescope.builtin").spell_suggest()<cr>')
