@@ -1,8 +1,10 @@
 set fish_greeting
 
 export LANG=en_US.UTF-8
-# Add Homebrew to $PATH
+# Modify $PATH
 fish_add_path -p /opt/homebrew/bin /opt/homebrew/sbin
+fish_add_path -p ~/.local/bin
+fish_add_path -p ~/.bin
 
 # Base16 Shell
 if status --is-interactive
@@ -23,6 +25,6 @@ alias lsa="ls -a"
 alias ..="cd .."
 alias ...="cd .. && cd .."
 alias ....="cd .. && cd .. && cd .."
-alias gcc="gcc-11"
-alias g++="g++-11"
+alias gcc="/opt/homebrew/bin/gcc-12"
+alias g++="/opt/homebrew/bin/g++-12"
 

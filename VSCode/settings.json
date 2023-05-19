@@ -161,7 +161,6 @@
         "*.ipynb": "jupyter-notebook"
     },
     "editor.fontSize": 14,
-    "terminal.integrated.shell.osx": "/bin/zsh",
     "explorer.autoReveal": false,
     "rewrap.wrappingColumn": 80,
     "[latex]": {
@@ -187,6 +186,45 @@
             "after": ["<esc>"]
         }
     ],
-    "workbench.colorTheme": "One Dark Pro",
     "notebook.lineNumbers": "on",
+    "vim.cursorStylePerMode.insert": "block",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "<leader>"],
+            "after": ["<c-^>"]
+        },
+        {
+            "before": ["<TAB>"],
+            "commands": [":bnext"]
+        },
+        {
+            "before": ["<S-TAB>"],
+            "commands": [":bprevious"]
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["<"],
+            "after": ["<", "g", "v"]
+        },
+        {
+            "before": [">"],
+            "after": [">", "g", "v"]
+        },
+    ],
+    "vim.useSystemClipboard": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": false,
+    "workbench.startupEditor": "none",
+    "html.autoCreateQuotes": false,
+    "html.format.wrapLineLength": 80,
+    "workbench.editor.closeOnFileDelete": true,
+    "workbench.editor.enablePreview": false,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "aws.telemetry": false
 }

@@ -41,6 +41,9 @@ local function save_profiles(threshold)
       results[i] = elem[1] .. ' took ' .. elem[2] .. 'ms'
     end
   end
+  if threshold then
+    table.insert(results, '(Only showing plugins that took longer than ' .. threshold .. ' ms ' .. 'to load)')
+  end
 
   _G._packer.profile_output = results
 end
@@ -71,36 +74,58 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  ["bufferline.nvim"] = {
+    config = { "require('setup/bufferline')" },
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
-  },
-  ["cmp-cmdline"] = {
-    loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
-    url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    url = "https://github.com/hrsh7th/cmp-nvim-lua"
+  },
   ["cmp-path"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["cmp-vsnip"] = {
+  cmp_luasnip = {
     loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
-    url = "https://github.com/hrsh7th/cmp-vsnip"
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["gitsigns.nvim"] = {
     config = { "require('setup/gitsigns')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["lsp-zero.nvim"] = {
+    config = { "require('setup/lsp-zero')" },
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
+    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
   ["lualine.nvim"] = {
     config = { "require('setup/lualine')" },
@@ -109,6 +134,16 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
   },
   ["nvim-autopairs"] = {
     config = { "require('setup/autopairs')" },
@@ -123,7 +158,6 @@ _G.packer_plugins = {
     url = "https://github.com/RRethy/nvim-base16"
   },
   ["nvim-cmp"] = {
-    config = { "require('setup/cmp')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
@@ -133,12 +167,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
-  },
-  ["nvim-lsp-installer"] = {
-    config = { "require('setup/lsp-installer')" },
-    loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -173,16 +201,6 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-vsnip",
-    url = "https://github.com/hrsh7th/vim-vsnip"
-  },
-  ["vim-vsnip-integ"] = {
-    loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
-    url = "https://github.com/hrsh7th/vim-vsnip-integ"
-  },
   ["which-key.nvim"] = {
     config = { "require('setup/whichkey')" },
     loaded = true,
@@ -192,38 +210,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-base16
-time([[Config for nvim-base16]], true)
-require('setup/base16')
-time([[Config for nvim-base16]], false)
--- Config for: spellsitter.nvim
-time([[Config for spellsitter.nvim]], true)
-require('setup/spellsitter')
-time([[Config for spellsitter.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require('setup/cmp')
-time([[Config for nvim-cmp]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require('setup/telescope')
 time([[Config for telescope.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require('setup/gitsigns')
-time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-comment
-time([[Config for nvim-comment]], true)
-require('setup/comment')
-time([[Config for nvim-comment]], false)
--- Config for: nvim-lsp-installer
-time([[Config for nvim-lsp-installer]], true)
-require('setup/lsp-installer')
-time([[Config for nvim-lsp-installer]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-require('setup/whichkey')
-time([[Config for which-key.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 require('setup/autopairs')
@@ -232,6 +222,34 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for nvim-treesitter]], true)
 require('setup/treesitter')
 time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-base16
+time([[Config for nvim-base16]], true)
+require('setup/base16')
+time([[Config for nvim-base16]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+require('setup/whichkey')
+time([[Config for which-key.nvim]], false)
+-- Config for: lsp-zero.nvim
+time([[Config for lsp-zero.nvim]], true)
+require('setup/lsp-zero')
+time([[Config for lsp-zero.nvim]], false)
+-- Config for: spellsitter.nvim
+time([[Config for spellsitter.nvim]], true)
+require('setup/spellsitter')
+time([[Config for spellsitter.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require('setup/gitsigns')
+time([[Config for gitsigns.nvim]], false)
+-- Config for: nvim-comment
+time([[Config for nvim-comment]], true)
+require('setup/comment')
+time([[Config for nvim-comment]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+require('setup/bufferline')
+time([[Config for bufferline.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads

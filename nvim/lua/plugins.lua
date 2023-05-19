@@ -42,28 +42,51 @@ return require('packer').startup(function(use)
 
     -- Base16 colorscheme
     use({"RRethy/nvim-base16", config = get_setup("base16")})
-    
-    -- LSP
-    use({"neovim/nvim-lspconfig"}) -- , config = get_setup("lsp")
-    use({
-        "williamboman/nvim-lsp-installer",
-        config = get_setup("lsp-installer")
-    })
 
-    -- Autocompletion
-    use({
-        "hrsh7th/nvim-cmp",
-        config = get_setup("cmp"),
-        requires = {
-            { "hrsh7th/cmp-nvim-lsp" },
-            { "hrsh7th/cmp-buffer" },
-            { "hrsh7th/cmp-path" },
-            { "hrsh7th/cmp-cmdline" },
-            { "hrsh7th/vim-vsnip" },
-            { "hrsh7th/cmp-vsnip" },
-            { "hrsh7th/vim-vsnip-integ" }
-        }
-    })
+    -- LSP
+    use {
+      'VonHeikemen/lsp-zero.nvim',
+      config = get_setup("lsp-zero"),
+      requires = {
+        -- LSP Support
+        {'neovim/nvim-lspconfig'},
+        {'williamboman/mason.nvim'},
+        {'williamboman/mason-lspconfig.nvim'},
+
+        -- Autocompletion
+        {'hrsh7th/nvim-cmp'},
+        {'hrsh7th/cmp-buffer'},
+        {'hrsh7th/cmp-path'},
+        {'saadparwaiz1/cmp_luasnip'},
+        {'hrsh7th/cmp-nvim-lsp'},
+        {'hrsh7th/cmp-nvim-lua'},
+
+        -- Snippets
+        {'L3MON4D3/LuaSnip'},
+        {'rafamadriz/friendly-snippets'},
+      }
+    }
+    -- -- LSP
+    -- use({"neovim/nvim-lspconfig"}) -- , config = get_setup("lsp")
+    -- use({
+    --     "williamboman/nvim-lsp-installer",
+    --     config = get_setup("lsp-installer")
+    -- })
+
+    -- -- Autocompletion
+    -- use({
+    --     "hrsh7th/nvim-cmp",
+    --     config = get_setup("cmp"),
+    --     requires = {
+    --         { "hrsh7th/cmp-nvim-lsp" },
+    --         { "hrsh7th/cmp-buffer" },
+    --         { "hrsh7th/cmp-path" },
+    --         { "hrsh7th/cmp-cmdline" },
+    --         { "hrsh7th/vim-vsnip" },
+    --         { "hrsh7th/cmp-vsnip" },
+    --         { "hrsh7th/vim-vsnip-integ" }
+    --     }
+    -- })
 
     -- Treesitter Highlighting
     use({
@@ -107,6 +130,12 @@ return require('packer').startup(function(use)
     use({
         "lewis6991/spellsitter.nvim",
         config = get_setup("spellsitter")
+    })
+
+    -- Bufferline
+    use({
+        "akinsho/bufferline.nvim",
+        config = get_setup("bufferline")
     })
 
     -- Automatically set up your configuration after cloning packer.nvim
