@@ -26,6 +26,9 @@ nnoremap k gk
 " Don't try to be vi compatible
 set nocompatible
 
+" Search through subdirectories
+set path+=**
+
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 

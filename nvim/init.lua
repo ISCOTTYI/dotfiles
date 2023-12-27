@@ -1,3 +1,5 @@
 require("options")
 require("mappings")
-require("plugins")
+require("plugin-manager")
+
+require('onedark').load()

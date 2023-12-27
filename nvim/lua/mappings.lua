@@ -1,40 +1,25 @@
--- PLUGIN MAPPINGS ARE FOUND IN THEIR RESPECTIVE SETUP FILE
-
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true } -- default options
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
-
--- Leader
-map("n", "\\", "<Nop>")
+-- Leader key
 vim.g.mapleader = "\\"
 
--- Exit INSERT mode with jj
-map("i", "jj", "<ESC>")
+-- Function to simplify noremap mapping
+local function nrm(mode, keys, mapping, opts)
+    opts = opts or {}
+    opts.noremap = true
+    vim.api.nvim_set_keymap(mode, keys, mapping, opts)
+end
 
--- Better buffer switching
-map("n", "<TAB>", ":bnext<CR>")
-map("n", "<S-TAB>", ":bprevious<CR>")
-map("n", "<leader><leader>", "<c-^>")
--- map("n", "<Leader>b", ":buffers<CR>:buffer<Space>") -- Done by telescope
+-- Insert mode
+nrm("i", "jj", "<ESC>") -- exit insert mode
 
--- Better indenting
-map("v", "<", "<gv")
-map("v", ">", ">gv")
+-- Normal mode
+nrm("n", "<leader><leader>", "<c-^>") -- Switch buffers
+nrm("n", "<leader>q", "gqip") -- Format paragraph
+nrm("n", "<TAB>", ":bnext<CR>") -- TAB to move to next buffer
+nrm("n", "<S-TAB>", ":bprevious<CR>") -- SHIFT TAB to move to previous buffer
+nrm("n", "j", "gj") -- Move lines in warped text
+nrm("n", "k", "gk") -- Move lines in warped text
 
--- Insert blank line above or below and stay in normal mode
-map("n", "<leader>o", 'o<ESC>0"_D')
-map("n", "<leader>O", 'O<ESC>0"_D')
-
--- Telescope
-map("n", "<leader>f", '<cmd>lua require("telescope.builtin").find_files()<cr>')
-map("n", "<leader>g", '<cmd>lua require("telescope.builtin").live_grep()<cr>') -- ripgrep required
-map("n", "<leader>b", '<cmd>lua require("telescope.builtin").buffers()<cr>')
--- map("n", "<leader>f", '<cmd>lua require("telescope").extensions.file_browser.file_browser()<CR>')
-map("n", "<leader>s", '<cmd>lua require("telescope.builtin").spell_suggest()<cr>')
-map("n", "<leader>d", '<cmd>lua require("telescope.builtin").git_status()<cr>')
-map("n", "<leader>ca", '<cmd>lua require("telescope.builtin").lsp_code_actions()<cr>')
+-- Visual mode
+nrm("v", "<", "<gv")
+nrm("v", ">", ">gv")
 

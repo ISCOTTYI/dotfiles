@@ -18,6 +18,7 @@ end
 
 alias tm="tmux new-session -A -s main"
 alias uni="cd ~/iCloudDrive/Uni/"
+alias brewug="brew upgrade --greedy --force"
 alias macode="cd ~/iCloudDrive/Uni/11.Semester/Proposal/Code_Refactor/gk-merge && source venv/bin/activate.fish"
 alias venvon="source venv/bin/activate.fish"
 alias l="ls -lah"
@@ -25,6 +26,6 @@ alias lsa="ls -a"
 alias ..="cd .."
 alias ...="cd .. && cd .."
 alias ....="cd .. && cd .. && cd .."
-alias gcc="/opt/homebrew/bin/gcc-12"
-alias g++="/opt/homebrew/bin/g++-12"
+alias gcc="/opt/homebrew/bin/gcc-13"
+alias g++="/opt/homebrew/bin/g++-13"
 
