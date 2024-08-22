@@ -26,6 +26,6 @@ alias lsa="ls -a"
 alias ..="cd .."
 alias ...="cd .. && cd .."
 alias ....="cd .. && cd .. && cd .."
-alias gcc="/opt/homebrew/bin/gcc-13"
-alias g++="/opt/homebrew/bin/g++-13"
+alias gcc="/opt/homebrew/bin/gcc-14"
+alias g++="/opt/homebrew/bin/g++-14"
 

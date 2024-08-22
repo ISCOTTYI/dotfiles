@@ -43,7 +43,7 @@ set modelines=0
 
 " Show line numbers
 set number
-set relativenumber
+" set relativenumber
 
 " Show file stats
 set ruler
@@ -71,7 +71,7 @@ set colorcolumn=81
 " ‘.’, ‘:’, or ‘)’, at the start of a line.
 " 1: When formatting text, don’t break a line after a one-letter word.
 set formatoptions=tcqrn1
-" set formatoptions-=t
+set formatoptions-=t
 set expandtab
 set tabstop=4 " number of spaces a tab occupies on screen
 set shiftwidth=4 " number of spaces inserted for a tab
@@ -84,7 +84,7 @@ set smartindent " indent depending on code style
 " Visualize tabs and newlines
 set listchars=tab:▸\ ,eol:¬,lead:·
 " Uncomment this to enable by default:
-set list " To enable by default
+" set list " To enable by default
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 

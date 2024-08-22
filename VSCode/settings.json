@@ -178,17 +178,15 @@
         "default": "right",
         "jupyter-notebook": "left"
     },
-    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-    "vscode-neovim.neovimInitVimPaths.darwin": "/Users/Daniel/.config/nvim/init.vim",
-    "vscode-neovim.mouseSelectionStartVisualMode": true,
+    "notebook.lineNumbers": "on",
+    // "vim.cursorStylePerMode.insert": "block",
+    "vim.leader": "\\",
     "vim.insertModeKeyBindings": [
         {
             "before": ["j", "j"],
             "after": ["<esc>"]
         }
     ],
-    "notebook.lineNumbers": "on",
-    "vim.cursorStylePerMode.insert": "block",
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["<leader>", "<leader>"],
@@ -202,6 +200,18 @@
             "before": ["<S-TAB>"],
             "commands": [":bprevious"]
         },
+        {
+            "before": ["<leader>", "q"],
+            "after": ["gqip"]
+        },
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
+        }
     ],
     "vim.visualModeKeyBindings": [
         {
@@ -227,6 +237,5 @@
     "[python]": {
         "editor.formatOnType": true
     },
-    "aws.telemetry": false,
-    "workbench.colorTheme": "Default Dark+"
+    "workbench.colorTheme": "Default Dark+",
 }

@@ -148,6 +148,12 @@
 			"\\:\\mathrm{d}$1 $0"
 		]
 	},
+	"ddf": {
+		"prefix": "dfdx",
+		"body": [
+			"\\frac{\\mathrm{d}$1}{\\mathrm{d}$0}$2"
+		]
+	},
 	"Sum Full": {
 		"prefix": "sumi",
 		"body": [
@@ -163,19 +169,19 @@
 	"parenthesis1": {
 		"prefix": "(",
 		"body": [
-			"\\left($1\\right"
+			"\\left($1\\right)"
 		]
 	},
 	"parenthesis2": {
 		"prefix": "[",
 		"body": [
-			"\\left[$1\\right"
+			"\\left[$1\\right]"
 		]
 	},
 	"parenthesis3": {
 		"prefix": "{",
 		"body": [
-			"\\left{$1\\right"
+			"\\left\\{$1\\right\\}"
 		]
 	},
 	"average": {
